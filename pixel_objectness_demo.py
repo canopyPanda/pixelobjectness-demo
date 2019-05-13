@@ -57,10 +57,13 @@ def segment_image(input_image, return_mask=True):
     if result is None:
         out_image = image
     else:
+        '''
         if return_mask:
             out_image = draw_mask(image, result)
         else:
             out_image = draw_result(image, result)
+        '''
+        out_image = draw_mask(image, result)
     image_nd = cv2.imencode('.jpg', out_image)[1]
     return image_nd.tostring()
 
