@@ -48,7 +48,7 @@ def forward_net(net, image_bgr):
     return output_blob[0].transpose(1, 2, 0)
 
 
-def segment_image(input_image, return_mask=False):
+def segment_image(input_image, return_mask=True):
     input_image = Image.open(BytesIO(input_image))
     image_rgb = np.asarray(input_image.convert('RGB'), dtype=np.uint8)
     # OpenCV uses BGR color
