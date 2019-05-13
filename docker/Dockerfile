@@ -32,16 +32,19 @@ RUN git clone --depth 1 https://github.com/kuralex/deeplab-public.git && \
     cmake -DBUILD_PYTHON=ON -DBUILD_EXAMPLES=OFF -DCMAKE_CXX_STANDARD_LIBRARIES="-lmatio" .. && \
     make -j"$(nproc)" && make install && cd ../.. && \
     git clone --depth 1 https://github.com/suyogduttjain/pixelobjectness.git
-    
-RUN pip install --upgrade pip && \
-    pip install flask && \
+
+RUN pip install --upgrade setuptools
+RUN pip install 'networkx==2.2'
+RUN pip install 'matplotlib==2.0.0'
+RUN pip install 'scikit-image<0.15'
+
+RUN pip install flask && \
     pip install flask_cors && \
     pip install pillow && \
-    pip install protobuf && \
-    pip install scikit-image    
+    pip install protobuf 
 
 RUN git clone --depth 1 https://github.com/kuralex/pixelobjectness-demo.git
 
 ENV PYTHONPATH /opt/deeplab-public/build/install/python:$PYTHONPATH
 
-CMD ["/usr/bin/python", "/opt/pixelobjectness-demo/pixel_objectness_demo.py"]
+#CMD ["/usr/bin/python", "/opt/pixelobjectness-demo/pixel_objectness_demo.py"]
