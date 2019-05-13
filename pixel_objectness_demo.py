@@ -14,7 +14,7 @@ base_dir = os.path.dirname(os.path.realpath(__file__))
 prototxt_file =  os.path.join(base_dir, 'pixel_objectness_demo.prototxt')
 weight_file = os.path.join(base_dir, '../pixelobjectness/pixel_objectness.caffemodel')
 
-IMAGE_SIZE = 513
+IMAGE_SIZE = 1500
 
 net = None
 
