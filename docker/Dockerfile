@@ -47,4 +47,4 @@ RUN git clone --depth 1 https://github.com/kuralex/pixelobjectness-demo.git
 
 ENV PYTHONPATH /opt/deeplab-public/build/install/python:$PYTHONPATH
 
-#CMD ["/usr/bin/python", "/opt/pixelobjectness-demo/pixel_objectness_demo.py"]
+CMD ["/usr/bin/python", "/opt/pixelobjectness-demo/pixel_objectness_demo.py"]
